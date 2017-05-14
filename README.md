@@ -1,3 +1,15 @@
+
+# MS17-010_SUBNET
+
+This is a simple fork of the tool at https://github.com/RiskSense-Ops/MS17-010.
+
+The only modification is that the script now takes one or more IPv4 CIDR network masks as inputs, and checks through ever host on each of them sequentially.  I just built it to speed some scanning I was doing.
+
+Original description from RiskSense below:
+
+
+********************************************************************
+
 # MS17-010
 MS17-010 is the Microsoft security bulletin which fixes several remote code execution vulnerabilities in the SMB service on Windows systems.
 
