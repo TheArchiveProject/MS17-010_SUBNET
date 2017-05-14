@@ -5,7 +5,12 @@ This is a simple fork of the tool at https://github.com/RiskSense-Ops/MS17-010.
 
 The only modification is that the script now takes one or more IPv4 CIDR network masks as inputs, and checks through ever host on each of them sequentially.  I just built it to speed some scanning I was doing.
 
-It requires the 'ipaddress' library, you can add it with pip as follows:
+Usage (example network 192.168.1.0/24):
+
+python2.7 smb_ms17_010.py 192.168.1.0/24
+
+
+It requires the 'ipaddress' library for Python 2, you can add it with pip as follows:
 
 pip install py2-ipaddress
 
