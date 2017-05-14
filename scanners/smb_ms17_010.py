@@ -5,7 +5,7 @@
 # Written by nixawk based on auxiliary/scanner/smb/smb_ms17_010 Metasploit module
 #
 
-# Loop for entire subnet added topranks May 2017.
+# Loop in main() to scan a subnet using ipaddress library added by topranks.
 
 """
 $ python2.7 smb_exploit.py 192.168.206.152
