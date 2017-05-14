@@ -3,7 +3,7 @@
 
 This is a simple fork of the tool at https://github.com/RiskSense-Ops/MS17-010.
 
-The only modification is that the script now takes one or more IPv4 CIDR network masks as inputs, and checks through ever host on each of them sequentially.  I just built it to speed some scanning I was doing.
+The only modification is that the script now takes one or more IPv4 CIDR networks as input, and checks through ever host on each of them sequentially.  I just built it to speed some scanning I was doing.
 
 Usage (example network 192.168.1.0/24):
 
