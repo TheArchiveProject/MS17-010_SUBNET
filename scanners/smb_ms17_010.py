@@ -5,6 +5,8 @@
 # Written by nixawk based on auxiliary/scanner/smb/smb_ms17_010 Metasploit module
 #
 
+# Loop for entire subnet added topranks May 2017.
+
 """
 $ python2.7 smb_exploit.py 192.168.206.152
 [+] [192.168.206.152] is likely VULNERABLE to MS17-010! (Windows 7 Ultimate 7600)
@@ -17,7 +19,7 @@ from ctypes import *
 import socket
 import struct
 import logging
-
+import ipaddress
 
 logging.basicConfig(level=logging.INFO, format="%(message)s")
 log = logging.getLogger(__file__)
@@ -418,11 +420,20 @@ def check(ip, port=445):
 if __name__ == '__main__':
     import sys
 
-    if len(sys.argv) != 2:
-        print("{} <ip>".format(sys.argv[0]))
+    if len(sys.argv) < 2:
+        print("{} <cidr_prefix>".format(sys.argv[0]))
         sys.exit(1)
     else:
-        check(sys.argv[1])
+        i=0
+        for subnet in sys.argv:
+            if(i!=0):
+                try:
+                    subnet=ipaddress.IPv4Network(subnet.decode('utf-8'))
+                    for ip in subnet:
+                        check(str(ip))
+                except ipaddress.AddressValueError:
+                    print("[-] [{}] Exception: Not a valid IPv4 subnet".format(str(subnet)))
+            i=i+1
 
 
 ## References
