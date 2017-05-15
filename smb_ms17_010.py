@@ -1,6 +1,5 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
-
 #
 # Written by nixawk based on auxiliary/scanner/smb/smb_ms17_010 Metasploit module
 #
