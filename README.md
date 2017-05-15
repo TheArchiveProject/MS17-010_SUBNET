@@ -7,12 +7,14 @@ The only modification is that the script now takes one or more IPv4 CIDR network
 
 Usage (for two example networks: 192.168.1.0/24 and 172.16.30.0/23):
 
-    python2.7 smb_ms17_010.py 192.168.1.0/24 172.16.30.0/23
-
+    Unix:    python2.7 smb_ms17_010.py 192.168.1.0/24 172.16.30.0/23
+    Windows: py -2 smb_ms17_010.py 192.168.1.0/24 172.16.30.0/2
 
 It requires the 'ipaddress' library for Python 2, you can add it with pip as follows:
 
-    pip install py2-ipaddress
+    Unix:    python2.7 -m pip install py2-ipaddress
+    Windows: py -2 -m pip install py2-ipaddress
+
 
 Original description from RiskSense below:
 
